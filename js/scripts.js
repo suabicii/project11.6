@@ -30,13 +30,6 @@ $(function() {
 				self.addCard(new Card(prompt("Wpisz nazwę karty")));
 			});
 		
-			$('.create-column')
-			.click(function(){
-				var name = prompt('Wpisz nazwę kolumny');
-				var column = new Column(name);
-				board.addColumn(column);
-			});
-		
 			$column.append($columnTitle)
 				.append($columnDelete)
 				.append($columnAddCard)
@@ -44,6 +37,7 @@ $(function() {
 			
 			return $column;
 		}
+		
 	}
 	Column.prototype = {
 		addCard: function(card) {
@@ -53,6 +47,13 @@ $(function() {
 			this.$element.remove();
 		}
 	};
+	
+	$('.create-column')
+	.click(function(){
+		var name = prompt('Wpisz nazwę kolumny');
+		var column = new Column(name);
+		board.addColumn(column);
+	});
 
 	function Card(description) {
 		var self = this;
