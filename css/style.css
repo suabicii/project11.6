@@ -1,0 +1,8 @@
+ul {
+	min-height: 30px;
+}
+
+ul li:hover,
+button:hover {
+	cursor: pointer;
+}
